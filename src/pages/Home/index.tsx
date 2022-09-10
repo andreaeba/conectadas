@@ -1,8 +1,8 @@
-import { Children, FC, ReactNode } from "react"
+import { FC, ReactNode } from "react"
 import { Layout } from "../../components/common/Layout"
 
 type Props = {
-    children: ReactNode
+    children?: ReactNode
     className?: string
 }
 
@@ -11,7 +11,7 @@ const Home: FC<Props> = ({children}) => {
     return(
         <>
         <Layout>
-            {children}
+            {children = <>Soy el children</>} 
         </Layout>
         </>
     )
