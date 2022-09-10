@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react"
+import { Menu } from "../Menu"
 
 
 type Props = {
@@ -11,7 +12,7 @@ const Layout: FC<Props> = ({children}) => {
     return(
         <>
         <header>
-            <div>Aquí va el Menú</div>
+            <Menu />  
         </header>
         <main>
             {children}
