@@ -11,7 +11,7 @@ const Home: FC<Props> = ({children}) => {
     return(
         <>
         <Layout>
-            {children = <>Soy el children</>} 
+            <div>Home!</div>
         </Layout>
         </>
     )

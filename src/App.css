@@ -4,6 +4,16 @@
   box-sizing: border-box;
 }
 
+body {
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 6em;
+}
+
+.navbar-item {
+  color: #F2E7DC;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
@@ -14,4 +24,36 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.main {
+  /* background-color: aquamarine; */
+  height: 100%;
+  /* flex-direction: column; */
+  /* padding: 30px; */
+  /* background-color: aqua; */
+}
+
+.signup-form {
+  /* background-color: rgb(211, 211, 211); */
+  width: 40vw;
+  /* height: 60vh; */
+  border: 1px solid #C8C8C8;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-group {
+
+  width: 50%;
+
+}
+
+.btn-primary {
+  margin: 20px 0px;
+  width: 30%;
 }
