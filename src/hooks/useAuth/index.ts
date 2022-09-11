@@ -1,7 +1,12 @@
+import { useEffect } from "react"
 import { usersApi } from "../../api/users"
 import { FormLogin } from "../../types"
 
 const useAuth = () => {
+
+    useEffect(() => {
+        loginWithToken()
+    }, [])
 
     const setUserToken = async (id: string) => {
         const newToken = Math.random().toString(36).substring(2)
@@ -22,14 +27,27 @@ const useAuth = () => {
 
         console.log(logged, email, password)
 
+    }
+
+    const loginWithToken = async () => {
+
+        const users = await usersApi.getAll()
+
+        const storedToken = localStorage.getItem('user-token')
+
+        const logged = users.find(
+            (user) => user.sessionStorage === storedToken)
+
+
         if(logged) {
             const token = await setUserToken(logged.id)
-
+    
             if(token) {
                 localStorage.setItem('user-token', token)
             }
-           
+               
         }
+
     }
 
 
