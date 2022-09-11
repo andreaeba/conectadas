@@ -1,10 +1,10 @@
-import { Container, Navbar, Nav, Image } from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
 
 const Menu = () => {
 
     return(
         <>
-            <Navbar bg="dark" variant="dark" className='navbar-vertical d-flex justify-content-around'>
+            <Navbar bg="primary" variant="primary" className='navbar-vertical d-flex justify-content-around'>
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>

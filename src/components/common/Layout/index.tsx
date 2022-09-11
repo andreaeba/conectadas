@@ -1,4 +1,5 @@
 import { FC, ReactNode } from "react"
+import { Footer } from "../Footer"
 import { Menu } from "../Menu"
 
 
@@ -18,7 +19,7 @@ const Layout: FC<Props> = ({children}) => {
             {children}
         </main>
         <footer>
-        <div>Aquí va el footer</div>
+            <Footer />
         </footer>
         </>
     )
