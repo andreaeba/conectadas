@@ -10,7 +10,7 @@ export type User = {
     country?: string
     avatar?: string
     birthday?: string
-    sessionToken?: string
+    sessionStorage?: string
     friends?: string[]
     state?: string
 

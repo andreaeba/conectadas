@@ -10,21 +10,24 @@ type Props = {
 
 const SignUpForm: FC<Props> = (className) => {
 
-    const [name, setName] = useState('')
-    const [lastname, setLastname] = useState('')
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [city, setCity] = useState('')
-    const [country, setCountry] = useState('')
-    const [avatar, setAvatar] = useState('')
-    const [birthday, setBirthday] = useState('')
+    const [ name, setName ] = useState('')
+    const [ lastname, setLastname ] = useState('')
+    const [ email, setEmail ] = useState('')
+    const [ password, setPassword ] = useState('')
+    const [ city, setCity ] = useState('')
+    const [ country, setCountry ] = useState('')
+    const [ avatar, setAvatar ] = useState('')
+    const [ birthday, setBirthday ] = useState('')
+    const [ state, setState ] = useState('user')
+    const [ sessionStorage, setSessionStorage ] = useState('')
 
 
     const handleSubmit = (e: {preventDefault: () => void}) => {
         e.preventDefault()
 
-        const user: UserPayload = {name, lastname, email, password, city, country, avatar, birthday} // Hay que agregar birthday pero me tira error => Type 'string' is not assignable to type 'Date'
+        const user: User = {name, lastname, email, password, city, country, avatar, birthday, state, sessionStorage} // Hay que agregar birthday pero me tira error => Type 'string' is not assignable to type 'Date'
         console.log(user)
+
 
         usersApi.add(user)
     }
