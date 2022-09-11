@@ -6,6 +6,7 @@ import { Home } from './pages/Home';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { SignUp } from './pages/SignUp';
+import { Login } from './pages/Login';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -24,6 +25,10 @@ root.render(
 
             <Route path='/signup' element={<Outlet />}>
                 <Route index element={<SignUp />} />
+            </Route>
+
+            <Route path='/login' element={<Outlet />}>
+                <Route index element={<Login />} />
             </Route>
           </Routes>
 
