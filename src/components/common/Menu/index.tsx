@@ -1,4 +1,4 @@
-import { Navbar, Nav} from 'react-bootstrap';
+import { Navbar, Nav, NavLink} from 'react-bootstrap';
 
 const Menu = () => {
 
@@ -8,7 +8,7 @@ const Menu = () => {
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
                 <Nav className="justify-content-end">
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/home">Home</Nav.Link>
+                        <NavLink className='navbar-link' to="/home">Home</NavLink>
                     </Nav.Item>
                     <Nav.Item>
                         <Nav.Link className='navbar-item' href="/login">Ingresar</Nav.Link>

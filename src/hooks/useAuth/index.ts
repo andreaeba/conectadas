@@ -1,8 +1,10 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { usersApi } from "../../api/users"
-import { FormLogin } from "../../types"
+import { FormLogin, User } from "../../types"
 
 const useAuth = () => {
+
+    const [ me, setMe ] = useState<User>()
 
     useEffect(() => {
         loginWithToken()
@@ -25,7 +27,17 @@ const useAuth = () => {
 
         //min 01:46
 
-        console.log(logged, email, password)
+        // console.log(logged, email, password)
+
+        if(logged) {
+            const token = await setUserToken(logged.id)
+    
+            if(token) {
+                localStorage.setItem('user-token', token)
+                setMe(logged)
+            }
+               
+        }
 
     }
 
@@ -38,20 +50,16 @@ const useAuth = () => {
         const logged = users.find(
             (user) => user.sessionStorage === storedToken)
 
-
-        if(logged) {
-            const token = await setUserToken(logged.id)
-    
-            if(token) {
-                localStorage.setItem('user-token', token)
-            }
-               
+        // console.log(logged)
+        
+        if(!me && logged) {
+            setMe(logged)
         }
 
     }
 
 
-    return { login }
+    return { me, login }
 }
 
 export { useAuth }

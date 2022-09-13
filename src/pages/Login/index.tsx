@@ -3,10 +3,11 @@ import { Container } from "react-bootstrap"
 import { Outlet } from "react-router-dom"
 import { Layout } from "../../components/common/Layout"
 import { LoginForm } from "../../components/forms/LoginForm"
+import { withAuth } from "../../hoc/withAuth"
 import { useAuth } from "../../hooks/useAuth"
 import { FormLogin } from "../../types"
 
-const Login = () => {
+const LoginPage = () => {
 
     const { login } = useAuth()
 
@@ -19,7 +20,6 @@ const Login = () => {
 
     return(
         <>
-        <Outlet />
         <Layout>
         <Container className="main d-flex justify-content-around ">
                 
@@ -32,4 +32,4 @@ const Login = () => {
 
 }
 
-export { Login }
+export const Login = withAuth(LoginPage)

@@ -18,14 +18,14 @@ const SignUpForm: FC<Props> = (className) => {
     const [ country, setCountry ] = useState('')
     const [ avatar, setAvatar ] = useState('')
     const [ birthday, setBirthday ] = useState('')
-    const [ state, setState ] = useState('user')
+    const [ state, setState ] = useState('active')
     const [ sessionStorage, setSessionStorage ] = useState('')
 
 
     const handleSubmit = (e: {preventDefault: () => void}) => {
         e.preventDefault()
 
-        const user: User = {name, lastname, email, password, city, country, avatar, birthday, state, sessionStorage} // Hay que agregar birthday pero me tira error => Type 'string' is not assignable to type 'Date'
+        const user: UserPayload = {name, lastname, email, password, city, country, avatar, birthday, state, sessionStorage} // Hay que agregar birthday pero me tira error => Type 'string' is not assignable to type 'Date'
         console.log(user)
 
 

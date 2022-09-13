@@ -10,11 +10,9 @@ type Props = {
 const Home: FC<Props> = ({children}) => {
 
     return(
-        <>
         <Layout>
             <h3>Login</h3>
         </Layout>
-        </>
     )
 
 }

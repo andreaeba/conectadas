@@ -3,6 +3,7 @@ import { Container } from "react-bootstrap"
 import { Outlet } from "react-router-dom"
 import { Layout } from "../../components/common/Layout"
 import { SignUpForm } from "../../components/forms/SignUpForm"
+import { withAuth } from "../../hoc"
 import { User } from "../../types"
 
 type Props = {
@@ -10,7 +11,7 @@ type Props = {
     user?: User
 }
 
-const SignUp: FC<Props> = (className, user: User) => {
+const SignUpPage: FC<Props> = (className, user: User) => {
 
     return(
         <>
@@ -33,4 +34,4 @@ const SignUp: FC<Props> = (className, user: User) => {
 
 }
 
-export { SignUp }
+export const SignUp = withAuth(SignUpPage)

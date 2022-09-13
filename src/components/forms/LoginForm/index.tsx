@@ -18,14 +18,6 @@ const LoginForm: FC<Props> = ({ onSubmit }) => {
 
     const [formData, setFormData] = useState(initialData)
 
-    // const handleSubmit = (e: {preventDefault: () => void}) => {
-    //     e.preventDefault()
-
-    //     const user: UserLogin = { email, password }
-    //     console.log(user)
-
-    // }
-
     return(
         <>
        
