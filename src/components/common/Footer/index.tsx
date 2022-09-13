@@ -8,11 +8,11 @@ type Props = {
 const Footer: FC<Props> = (className) => {
 
     return(
-        <>
-        <Container fluid className="footer">
-            <span>Created with ☕ by Andrea</span>
-        </Container>
-        </>
+        <footer>
+            <Container fluid className="footer">
+                <span>Created with ☕ by Andrea</span>
+            </Container>
+        </footer>
     )
 
 }
