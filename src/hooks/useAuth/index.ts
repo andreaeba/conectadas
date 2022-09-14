@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { usersApi } from "../../api/users"
+import { AuthContext } from "../../context/auth"
 import { FormLogin, User } from "../../types"
 
 const useAuth = () => {
 
-    const [ me, setMe ] = useState<User>()
+    const { me, setCurrentUser }  = useContext(AuthContext)
 
     useEffect(() => {
         loginWithToken()
@@ -34,7 +35,7 @@ const useAuth = () => {
     
             if(token) {
                 localStorage.setItem('user-token', token)
-                setMe(logged)
+                setCurrentUser(logged)
             }
                
         }
@@ -53,7 +54,7 @@ const useAuth = () => {
         // console.log(logged)
         
         if(!me && logged) {
-            setMe(logged)
+            setCurrentUser(logged)
         }
 
     }

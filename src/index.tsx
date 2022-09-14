@@ -7,14 +7,16 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { SignUp } from './pages/SignUp';
 import { Login } from './pages/Login';
+import { AuthProvider } from './context/auth';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-        <Routes>
+    <AuthProvider>
+      <BrowserRouter>
+         <Routes>
             <Route path="/" element={<Home />}>
               <Route index element={<Home />} />  
               {/* <Route path="login" element={<div>Login</div>} /> */}
@@ -31,7 +33,7 @@ root.render(
                 <Route index element={<Login />} />
             </Route>
           </Routes>
-
-    </BrowserRouter>
+        </BrowserRouter>
+    </AuthProvider>
   </React.StrictMode>
 );
