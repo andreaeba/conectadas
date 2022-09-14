@@ -26,10 +26,6 @@ const useAuth = () => {
         const logged = users.find(
             (user) => user.email === email && user.password === password)
 
-        //min 01:46
-
-        // console.log(logged, email, password)
-
         if(logged) {
             const token = await setUserToken(logged.id)
     

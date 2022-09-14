@@ -1,26 +1,27 @@
-import { Navbar, Nav, NavLink} from 'react-bootstrap';
+import { Navbar, Nav} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
 
     return(
         <>
-            <Navbar bg="primary" className='navbar2 navbar-vertical d-flex justify-content-around'>
+            <Navbar bg="primary" variant="primary" className='navbar-vertical d-flex justify-content-around'>
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
-                <Nav className="justify-content-end">
+                <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
-                        <NavLink className='navbar-link' to="/home">Home</NavLink>
+                        <NavLink to="/" className="nav-link">Home</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/login">Ingresar</Nav.Link>
+                        <NavLink to="/login" className="nav-link">Login</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/signup">Registrarse</Nav.Link>
+                        <NavLink to="/signup" className="nav-link">Sign up</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/search-friends">Buscar amigos</Nav.Link>
+                        <NavLink to="/search-friends" className="nav-link">Search friends</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/logout">Logout</Nav.Link>
+                        <NavLink to="/logout" className="nav-link">Logout</NavLink>
                     </Nav.Item>
                 </Nav>
             </Navbar>
