@@ -11,16 +11,24 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <BrowserRouter>
-        <Routes>
+      <BrowserRouter>
+         <Routes>
             <Route path="/" element={<Home />}>
               <Route index element={<Home />} />  
-              <Route path="login" element={<div>Login</div>} />
-              <Route path="signup" element={<div>SignUp</div>} />
-              <Route path="search-friends" element={<div>Search Friends</div>} />
-              <Route path="logout" element={<div>Logout</div>} />
+              {/* <Route path="login" element={<div>Login</div>} /> */}
+              {/* <Route path="signup" element={<SignUp />} /> */}
+              {/* <Route path="search-friends" element={<div>Search Friends</div>} /> */}
+              {/* <Route path="logout" element={<div>Logout</div>} /> */}
+            </Route>
+
+            <Route path='/signup' element={<Outlet />}>
+                {/* <Route index element={<SignUp />} /> */}
+            </Route>
+
+            <Route path='/login' element={<Outlet />}>
+                {/* <Route index element={<Login />} /> */}
             </Route>
           </Routes>
-    </BrowserRouter>
+        </BrowserRouter>
   </React.StrictMode>
 );
