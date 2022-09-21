@@ -5,9 +5,9 @@ const Menu = () => {
 
     return(
         <>
-            <Navbar bg="primary" variant="primary" className='navbar-vertical d-flex justify-content-around'>
+            <Navbar bg="primary" className='navbar2 navbar-vertical d-flex justify-content-around'>
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
-                <Nav className="justify-content-end" activeKey="/home">
+                <Nav className="justify-content-end">
                     <Nav.Item>
                         <NavLink to="/" className="nav-link">Home</NavLink>
                     </Nav.Item>
