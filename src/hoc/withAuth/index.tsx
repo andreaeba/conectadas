@@ -1,9 +1,8 @@
-import { FC } from "react"
+import { FC, useEffect } from "react"
 import { useLocation, useNavigate } from "react-router-dom"
 import { useAuth } from "../../hooks/useAuth"
 
 const publicRoutes = ["/login", "/signup"]
-const privateRoutes = ["/home", "/search", "/logout"]
 
 const withAuth = (Component: FC): FC => {
 
@@ -14,17 +13,29 @@ const withAuth = (Component: FC): FC => {
         const location = useLocation()
         const navigate = useNavigate()
 
-        console.log(me)
+        // console.log(me, location.pathname)
 
-        // Si esta logeado y entra a login o signup
-        if(me && publicRoutes.includes(location.pathname)) {
-            navigate("/home")
-        }
+        useEffect(() => {
+            // Si esta logeado y entra a login o signup
+        // Caso 1 - Existe el usuario y es una ruta pública => home
+            if(me && publicRoutes.includes(location.pathname)) {
+                navigate("/home")
+            }
+            // Caso 2 - Existe el usuario y NO es una ruta pública => Component
 
-        //si no esta logeado y entra a home, search o logout
-        if(!me && privateRoutes.includes(location.pathname)) {
-            navigate("/login")
-        }
+            // Caso 3 - No existe el usuario y es una ruta pública => Component
+
+
+            // Caso 4 - No existe el usuario y NO es una ruta pública => Login
+            console.log(!me, !publicRoutes.includes(location.pathname))
+            if(!me && !publicRoutes.includes(location.pathname)) {
+                navigate("/login")
+            }
+
+        }, [me])
+        
+
+        
 
         return(
             <Component />

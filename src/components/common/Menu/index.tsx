@@ -1,5 +1,7 @@
 import { Navbar, Nav} from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import { withAuth } from '../../../hoc';
+import { useAuth } from '../../../hooks/useAuth'
 
 const Menu = () => {
 
@@ -9,7 +11,7 @@ const Menu = () => {
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
                 <Nav className="justify-content-end" activeKey="/home">
                     <Nav.Item>
-                        <NavLink to="/" className="nav-link">Home</NavLink>
+                        <NavLink to="/home" className="nav-link">Home</NavLink>
                     </Nav.Item>
                     <Nav.Item>
                         <NavLink to="/login" className="nav-link">Login</NavLink>
@@ -18,7 +20,7 @@ const Menu = () => {
                         <NavLink to="/signup" className="nav-link">Sign up</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <NavLink to="/search-friends" className="nav-link">Search friends</NavLink>
+                        <NavLink to="/search" className="nav-link">Search friends</NavLink>
                     </Nav.Item>
                     <Nav.Item>
                         <NavLink to="/logout" className="nav-link">Logout</NavLink>

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react"
 import { Layout } from "../../components/common/Layout"
+import { withAuth } from "../../hoc"
 import { useAuth } from "../../hooks/useAuth"
 
 type Props = {
@@ -7,14 +8,16 @@ type Props = {
     className?: string
 }
 
-const Home: FC<Props> = ({children}) => {
+const HomePage: FC<Props> = ({children}) => {
+
+    // const { login } = useAuth()
 
     return(
         <Layout>
-            <h3>Login</h3>
+            <h3>Home</h3>
         </Layout>
     )
 
 }
 
-export { Home }
+export const Home = withAuth(HomePage)

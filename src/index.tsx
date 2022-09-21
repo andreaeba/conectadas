@@ -8,21 +8,27 @@ import './App.css';
 import { SignUp } from './pages/SignUp';
 import { Login } from './pages/Login';
 import { AuthProvider } from './context/auth';
+import { Logout } from './pages/Logout';
+import { Search } from './pages/Search';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <AuthProvider>
       <BrowserRouter>
          <Routes>
-            <Route path="/" element={<Home />}>
-              <Route index element={<Home />} />  
+            <Route path="/" element={<Login />}>
+              <Route index element={<Login />} />  
               {/* <Route path="login" element={<div>Login</div>} /> */}
               {/* <Route path="signup" element={<SignUp />} /> */}
               {/* <Route path="search-friends" element={<div>Search Friends</div>} /> */}
               {/* <Route path="logout" element={<div>Logout</div>} /> */}
+            </Route>
+
+            <Route path='/home' element={<Outlet />}>
+                <Route index element={<Home />} />
             </Route>
 
             <Route path='/signup' element={<Outlet />}>
@@ -32,8 +38,17 @@ root.render(
             <Route path='/login' element={<Outlet />}>
                 <Route index element={<Login />} />
             </Route>
+
+            <Route path='/search' element={<Outlet />}>
+                <Route index element={<Search />} />
+            </Route>
+
+            <Route path='/logout' element={<Outlet />}>
+                <Route index element={<Logout />}/>
+            </Route>
+
           </Routes>
         </BrowserRouter>
     </AuthProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );
