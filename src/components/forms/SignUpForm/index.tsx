@@ -5,9 +5,10 @@ import { User, UserPayload } from "../../../types"
 
 type Props = {
     className?: string
+    
 }
 
-const SignUpForm: FC<Props> = () => {
+const SignUpForm: FC<Props> = (className) => {
 
     const [name, setName] = useState('')
     const [lastname, setLastname] = useState('')
@@ -26,9 +27,6 @@ const SignUpForm: FC<Props> = () => {
         console.log(user)
 
         usersApi.add(user)
-
-
-
     }
 
     return(
