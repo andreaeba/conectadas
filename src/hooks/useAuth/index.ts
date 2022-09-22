@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import { Navigate, useNavigate } from "react-router-dom"
 import { usersApi } from "../../api/users"
 import { AuthContext } from "../../context/auth"
 import { FormLogin, User } from "../../types"
@@ -6,6 +7,7 @@ import { FormLogin, User } from "../../types"
 const useAuth = () => {
 
     const { me, setCurrentUser }  = useContext(AuthContext)
+    const navigate = useNavigate()
 
     useEffect(() => {
         loginWithToken()
@@ -55,8 +57,16 @@ const useAuth = () => {
 
     }
 
+    const logout = () => {
 
-    return { me, login }
+        //borrar de la base de datos - Remove session token
+        localStorage.removeItem("user-token");
+        navigate("/login");       
+
+    }
+
+
+    return { me, login, logout }
 }
 
 export { useAuth }
