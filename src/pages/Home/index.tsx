@@ -1,8 +1,11 @@
-import { FC, ReactNode, useState } from "react"
+import { FC, ReactNode, useContext, useState } from "react"
 import { Button, Card, Container, FloatingLabel, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
+import { postsApi } from "../../api/posts"
 import { Layout } from "../../components/common/Layout"
+import { AuthContext } from "../../context/auth"
 import { withAuth } from "../../hoc"
 import { useAuth } from "../../hooks/useAuth"
+import { PostPayload } from "../../types"
 
 type Props = {
     children?: ReactNode
@@ -11,10 +14,24 @@ type Props = {
 
 const HomePage: FC<Props> = ({children}) => {
 
+    const { me, setCurrentUser }  = useContext(AuthContext)
 
     const [title, setTile] = useState('')
     const [text, setText] = useState('')
     // const { login } = useAuth()
+
+    const handleSubmit = (e: {preventDefault: () => void}) => {
+        e.preventDefault()
+
+        const id = me.id
+
+        const post: PostPayload = {title, text, user = id}
+        
+        postsApi.add(post)
+
+    }
+
+    console.log( me.id )
 
     return(
         <Layout>
@@ -29,7 +46,7 @@ const HomePage: FC<Props> = ({children}) => {
                 <Container className="col-sm-9 bg-primary p-3">
                     <Container fluid className="p-3 bg-warning">
                        <Card>
-                            <Form className="d-flex flex-column">
+                            <Form className="d-flex flex-column" onSubmit={handleSubmit}>
                             <FloatingLabel
                                 label="Título de la publicación"
                                 className="mb-3"
@@ -38,6 +55,7 @@ const HomePage: FC<Props> = ({children}) => {
                                 type="text"
                                 placeholder=""
                                 value={title}
+                                onChange={(e) => {setTile(e.target.value)}}
                                 />
                             </FloatingLabel>
                             <FloatingLabel
@@ -47,7 +65,9 @@ const HomePage: FC<Props> = ({children}) => {
                                 as="textarea"
                                 placeholder="Mi película favorita es..."
                                 style={{ height: '100px' }}
-                                value={text} />
+                                value={text}
+                                onChange={(e) => {setText(e.target.value)}}
+                                />
                             </FloatingLabel>
 
                             <Button 
