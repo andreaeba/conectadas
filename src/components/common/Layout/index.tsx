@@ -1,6 +1,6 @@
 import { FC, ReactNode } from "react"
 import { Footer } from "../Footer"
-import { Menu } from "../Menu"
+import { MenuForLoginUser } from "../Menu"
 
 
 type Props = {
@@ -13,7 +13,7 @@ const Layout: FC<Props> = ({children}) => {
     return(
         <>
         <header>
-            <Menu />  
+            <MenuForLoginUser /> 
         </header>
         <main>
             {children}

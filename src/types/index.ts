@@ -28,6 +28,7 @@ export type Post = {
     title: string
     text: string
     user: string
+    date: new Date()
 }
 
 export type PostPayload = Omit<Post, 'id'>

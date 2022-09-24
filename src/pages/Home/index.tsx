@@ -1,4 +1,4 @@
-import { FC, ReactNode, useContext, useState } from "react"
+import { FC, ReactNode, useContext, useEffect, useState } from "react"
 import { Button, Card, Container, FloatingLabel, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 import { postsApi } from "../../api/posts"
 import { Layout } from "../../components/common/Layout"
@@ -29,9 +29,13 @@ const HomePage: FC<Props> = ({children}) => {
         
         postsApi.add(post)
 
+        console.log(post)
+
     }
 
-    console.log( me.id )
+    useEffect(() => {
+        console.log(me.id)
+    })
 
     return(
         <Layout>
