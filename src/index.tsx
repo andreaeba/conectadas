@@ -10,6 +10,7 @@ import { Login } from './pages/Login';
 import { AuthProvider } from './context/auth';
 import { Logout } from './pages/Logout';
 import { Search } from './pages/Search';
+import { Movies } from './pages/Movies';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -45,6 +46,14 @@ root.render(
 
             <Route path='/logout' element={<Outlet />}>
                 <Route index element={<Logout />}/>
+            </Route>
+
+            <Route path='/movies' element={<Outlet />}>
+                <Route index element={<Movies />}/>
+            </Route>
+
+            <Route path='/profile' element={<Outlet />}>
+                <Route index element={<div>Profile</div>}/>
             </Route>
 
           </Routes>

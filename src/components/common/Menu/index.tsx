@@ -35,7 +35,7 @@ const MenuForLogoutUser = () => {
         <>
             <Navbar bg="primary" variant="primary" className='navbar-vertical d-flex justify-content-around'>
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
-                <Nav className="justify-content-end" activeKey="/home">
+                <Nav className="justify-content-end" activeKey="/login">
                     <Nav.Item>
                         <NavLink to="/login" className="nav-link">Login</NavLink>
                     </Nav.Item>

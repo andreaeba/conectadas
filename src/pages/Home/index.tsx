@@ -20,12 +20,16 @@ const HomePage: FC<Props> = ({children}) => {
     const [text, setText] = useState('')
     // const { login } = useAuth()
 
+    // const idUser = me.id
+
     const handleSubmit = (e: {preventDefault: () => void}) => {
         e.preventDefault()
 
-        const id = me.id
+        const idUser = () => {
+            return me.id
+        }
 
-        const post: PostPayload = {title, text, user = id}
+        const post: PostPayload = {title, text}
         
         postsApi.add(post)
 
