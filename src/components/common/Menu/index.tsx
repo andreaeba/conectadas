@@ -1,4 +1,5 @@
 import { Navbar, Nav} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Menu = () => {
 
@@ -8,19 +9,19 @@ const Menu = () => {
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
                 <Nav className="justify-content-end">
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/home">Home</Nav.Link>
+                        <NavLink to="/" className="nav-link">Home</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/login">Ingresar</Nav.Link>
+                        <NavLink to="/login" className="nav-link">Login</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/signup">Registrarse</Nav.Link>
+                        <NavLink to="/signup" className="nav-link">Sign up</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/search-friends">Buscar amigos</Nav.Link>
+                        <NavLink to="/search-friends" className="nav-link">Search friends</NavLink>
                     </Nav.Item>
                     <Nav.Item>
-                        <Nav.Link className='navbar-item' href="/logout">Logout</Nav.Link>
+                        <NavLink to="/logout" className="nav-link">Logout</NavLink>
                     </Nav.Item>
                 </Nav>
             </Navbar>
