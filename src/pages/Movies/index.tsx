@@ -64,10 +64,11 @@ const MoviesPage: FC<Props> = ({ className }) => {
                 </Form>
 
                 <Container>
-                    {movies &&
-                        movies.forEach(movie: Movie) => {
-                            {movie. }
-                        }}
+                    {/* <ul> {movies.map((elem) => {
+                        <h6>{elem.title}</h6>
+                        <p>{elem.popularity}</p>
+                    })}
+                    </ul> */}
 
                 </Container>
 

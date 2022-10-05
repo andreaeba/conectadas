@@ -4,7 +4,7 @@ import { MenuForLoginUser } from "../Menu"
 
 
 type Props = {
-    children: ReactNode
+    children: JSX.Element|JSX.Element[];
     className?: string
 }
 
