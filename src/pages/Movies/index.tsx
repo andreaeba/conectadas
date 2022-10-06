@@ -4,7 +4,7 @@ import { Outlet, useSearchParams } from "react-router-dom"
 import { moviesApi } from "../../api/movies"
 import { Layout } from "../../components/common/Layout"
 import { withAuth } from "../../hoc"
-import { Movie } from "../../types"
+import { Movie } from "@types"
 
 type Props = {
     className?: string
@@ -64,11 +64,18 @@ const MoviesPage: FC<Props> = ({ className }) => {
                 </Form>
 
                 <Container>
-                    {/* <ul> {movies.map((elem) => {
-                        <h6>{elem.title}</h6>
-                        <p>{elem.popularity}</p>
-                    })}
-                    </ul> */}
+                    <ul> 
+                        {
+                            movies.map((elem) => {
+                                return(
+                                    <li>
+                                        <h6>{elem.title}</h6>
+                                        <p>{elem.popularity}</p>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
 
                 </Container>
 
