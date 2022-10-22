@@ -7,10 +7,10 @@ const MenuForLoginUser = () => {
 
     return(
         <>
-            <Navbar bg="primary" variant="primary" className='navbar-vertical d-flex justify-content-around'>
+            <Navbar className='navbar navbar-vertical d-flex justify-content-around'>
                 <Navbar.Brand>ConectADAs</Navbar.Brand>
-                <Nav className="justify-content-end" activeKey="/home">
-                    <Nav.Item>
+                <Nav className="justify-content-end" activeKey="/profile">
+                    <Nav.Item className="">
                         <NavLink to="/home" className="nav-link">Home</NavLink>
                     </Nav.Item>
                     <Nav.Item>

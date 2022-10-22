@@ -47,8 +47,9 @@ const MoviesPage: FC<Props> = ({ className }) => {
         <>
         <Outlet />
         <Layout>
+            <Container className="d-flex flex-column justify-content-center align-items-center">
             <Container className="m-5">
-            <h3>Recommended Movies</h3>
+            <h3>Start to recommend movies to your friends!</h3>
 
                 <Form className="" >
                     <Form.Group className="mb-3" controlId="formInputSearch">
@@ -79,6 +80,7 @@ const MoviesPage: FC<Props> = ({ className }) => {
 
                 </Container>
 
+            </Container>
             </Container>
         </Layout>
         </>

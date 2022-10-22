@@ -16,14 +16,15 @@
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-scripts-rewired": "^3.1.1",
     "typescript": "^4.8.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts-rewired start",
-    "build": "react-scripts-rewired build",
-    "test": "react-scripts-rewired test",
-    "eject": "react-scripts-rewired eject"
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject"
   },
   "eslintConfig": {
     "extends": [

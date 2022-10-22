@@ -54,6 +54,7 @@ const HomePage: FC<Props> = ({children}) => {
                 <Container className="col-sm-9 bg-primary p-3">
                     <Container fluid className="p-3 bg-warning">
                        <Card>
+                            <p>¿Qué te gustaría compartirnos?</p>
                             <Form className="d-flex flex-column" onSubmit={handleSubmit}>
                             <FloatingLabel
                                 label="Título de la publicación"
