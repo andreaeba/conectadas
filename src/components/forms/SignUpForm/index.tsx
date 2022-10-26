@@ -1,7 +1,7 @@
 import { FC, useState, useEffect } from "react"
 import { Button, Card, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 import { usersApi } from "../../../api/users"
-import { User, UserPayload } from "../../../types"
+import { User, SignUpPayload } from "../../../types"
 
 type Props = {
     className?: string
