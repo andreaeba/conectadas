@@ -1,7 +1,7 @@
 import { mapToArray } from '../helpers'
-import { User, UserLogin, UserPayload } from '../types'
+import { User, LoginPayload, SignUpPayload } from '../types'
 
-const add = (user: UserPayload) => {
+const add = (user: SignUpPayload) => {
 
     const options: RequestInit = {
         method: 'POST',
