@@ -1,7 +1,8 @@
 import { FC, useState, useEffect } from "react"
 import { Button, Card, Form, FormControl, FormGroup, FormLabel } from "react-bootstrap"
 import { usersApi } from "../../../api/users"
-import { User, UserLogin, UserPayload, FormLogin } from "../../../types"
+import { useAuth } from "../../../hooks/useAuth"
+import { User, LoginPayload, SignUpPayload, FormLogin } from "../../../types"
 
 type Props = {
     className?: string
@@ -20,11 +21,10 @@ const LoginForm: FC<Props> = ({ onSubmit }) => {
     // const handleSubmit = (e: {preventDefault: () => void}) => {
     //     e.preventDefault()
 
-    //     const user: UserLogin = { email, password }
+    //     const user: LoginPayload = { email, password }
     //     console.log(user)
 
     // }
-
 
     return(
         <>

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from "react"
 import { Layout } from "../../components/common/Layout"
+import { useAuth } from "../../hooks/useAuth"
 
 type Props = {
     children?: ReactNode
@@ -11,7 +12,7 @@ const Home: FC<Props> = ({children}) => {
     return(
         <>
         <Layout>
-            <div>Home!</div>
+            <h3>Login</h3>
         </Layout>
         </>
     )

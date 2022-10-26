@@ -12,7 +12,6 @@ type Props = {
 
 const SignUp: FC<Props> = (className, user: User) => {
 
-
     return(
         <>
         <Outlet />

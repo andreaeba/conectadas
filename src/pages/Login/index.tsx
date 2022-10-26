@@ -3,13 +3,17 @@ import { Container } from "react-bootstrap"
 import { Outlet } from "react-router-dom"
 import { Layout } from "../../components/common/Layout"
 import { LoginForm } from "../../components/forms/LoginForm"
+import { useAuth } from "../../hooks/useAuth"
 import { FormLogin } from "../../types"
 
 const Login = () => {
 
+    const { login } = useAuth()
+
     const handleSubmit = (formData: FormLogin ) => {
 
-        console.log(formData)
+        login(formData)
+        
     }
 
 

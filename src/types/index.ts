@@ -10,15 +10,15 @@ export type User = {
     country?: string
     avatar?: string
     birthday?: string
-    sessionToken?: string
+    sessionStorage?: string
     friends?: string[]
     state?: string
 
 }
 
-export type UserPayload = Omit<User, 'id' | 'state' | 'sessionToken'>
+export type SignUpPayload = Omit<User, 'id' | 'state' | 'sessionToken'>
 
-export type UserLogin = Omit<User, 'id' | 'name' | 'lastname' |'city' | 'country' | 'state' | 'avatar' | 'state' | 'sessionToken'>
+export type LoginPayload = Omit<User, 'id' | 'name' | 'lastname' |'city' | 'country' | 'state' | 'avatar' | 'state' | 'sessionToken'>
 
 export type FormLogin = {
     email: string
